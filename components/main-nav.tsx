@@ -10,7 +10,19 @@ export function MainNav({
 }: React.HtmlHTMLAttributes<HTMLElement>) {
 	const pathname = usePathname();
 	const params = useParams();
+
 	const routes = [
+		{
+			href: `/${params.storeId}`,
+			label: 'Beranda',
+			active: pathname === `/${params.storeId}`,
+		},
+
+		{
+			href: `/${params.storeId}/billboards`,
+			label: 'Papan Iklan',
+			active: pathname === `/${params.storeId}/billboards`,
+		},
 		{
 			href: `/${params.storeId}/settings`,
 			label: 'Pengaturan',
