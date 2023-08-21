@@ -13,7 +13,7 @@ export function MainNav({
 	const routes = [
 		{
 			href: `/${params.storeId}/settings`,
-			label: 'Settings',
+			label: 'Pengaturan',
 			active: pathname === `/${params.storeId}/settings`,
 		},
 	];
