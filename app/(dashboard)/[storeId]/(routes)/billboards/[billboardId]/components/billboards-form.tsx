@@ -93,7 +93,7 @@ export const BillboardsForm: React.FC<BillboardsFormProps> = ({
 				`/api/${params.storeId}/billboards/${params.billboardId}`
 			);
 			router.refresh();
-			router.push('/');
+			router.push(`/${params.storeId}/billboards`);
 			toast.success('Papan Iklan Telah Di Hapus.');
 		} catch (error) {
 			toast.error(
