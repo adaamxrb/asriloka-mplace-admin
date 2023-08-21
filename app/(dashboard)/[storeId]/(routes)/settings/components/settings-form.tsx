@@ -3,7 +3,7 @@
 import * as z from 'zod';
 import { Store } from '@prisma/client';
 import { Trash } from 'lucide-react';
-import { useForm } from 'react-hook-form';
+import { set, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useState } from 'react';
 import { toast } from 'react-hot-toast';
@@ -22,6 +22,7 @@ import {
 	FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
+import { AlertModal } from '@/components/modals/alert-modal';
 
 interface SettingsFormProps {
 	initialData: Store;
@@ -58,8 +59,31 @@ export const SettingsForm: React.FC<SettingsFormProps> = ({ initialData }) => {
 		}
 	};
 
+	const onDelete = async () => {
+		try {
+			setLoading(true);
+			await axios.delete(`/api/stores/${params.storeId}`);
+			router.refresh();
+			router.push('/');
+			toast.success('Toko Berhasil Di Hapus.');
+		} catch (error) {
+			toast.error(
+				'Pastikan kamu menghapus semua produk terlebih dahulu.'
+			);
+		} finally {
+			setLoading(false);
+			setOpen(false);
+		}
+	};
+
 	return (
 		<>
+			<AlertModal
+				isOpen={open}
+				onClose={() => setOpen(false)}
+				onConfirm={onDelete}
+				loading={loading}
+			/>
 			<div className="flex items-center justify-between">
 				<Heading
 					title="Pengaturan"
