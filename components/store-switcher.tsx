@@ -62,7 +62,10 @@ export default function StoreSwitcher({
 					role="combobox"
 					aria-expanded={open}
 					aria-label="Pilih Toko"
-					className={cn('w-[200px] justify-between', className)}>
+					className={cn(
+						'w-[200px] justify-between font-bold',
+						className
+					)}>
 					<StoreIcon className="mr-2 h-4 w-4" />
 					{currentStore?.label}
 					<div className="ml-auto h-4 w-4 shrink-0"></div>
