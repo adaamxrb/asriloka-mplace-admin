@@ -17,11 +17,15 @@ export function MainNav({
 			label: 'Beranda',
 			active: pathname === `/${params.storeId}`,
 		},
-
 		{
 			href: `/${params.storeId}/billboards`,
 			label: 'Papan Iklan',
 			active: pathname === `/${params.storeId}/billboards`,
+		},
+		{
+			href: `/${params.storeId}/categories`,
+			label: 'Kategori',
+			active: pathname === `/${params.storeId}/categories`,
 		},
 		{
 			href: `/${params.storeId}/settings`,
