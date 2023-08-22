@@ -38,6 +38,11 @@ export function MainNav({
 			active: pathname === `/${params.storeId}/variants`,
 		},
 		{
+			href: `/${params.storeId}/products`,
+			label: 'Produk',
+			active: pathname === `/${params.storeId}/products`,
+		},
+		{
 			href: `/${params.storeId}/settings`,
 			label: 'Pengaturan',
 			active: pathname === `/${params.storeId}/settings`,
