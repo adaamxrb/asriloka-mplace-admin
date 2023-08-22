@@ -28,7 +28,7 @@ export const SizesClient: React.FC<SizesClientProps> = ({ data }) => {
 				<Button
 					onClick={() => router.push(`/${params.storeId}/sizes/new`)}>
 					<Plus className="h-4 w-4" />
-					Tambah Papan Iklan Baru
+					Tambah Ukuran Baru
 				</Button>
 			</div>
 			<Separator />
