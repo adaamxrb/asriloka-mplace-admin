@@ -86,10 +86,10 @@ export const VariantForm: React.FC<VariantFormProps> = ({ initialData }) => {
 			);
 			router.refresh();
 			router.push(`/${params.storeId}/variants`);
-			toast.success('Jenis Telah Di Hapus.');
+			toast.success('Varian Telah Di Hapus.');
 		} catch (error) {
 			toast.error(
-				'Pastikan Anda telah menghapus semua produk yang menggunakan Jenis ini terlebih dahulu.'
+				'Pastikan Anda telah menghapus semua produk yang menggunakan Varian ini terlebih dahulu.'
 			);
 		} finally {
 			setLoading(false);

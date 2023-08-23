@@ -22,20 +22,20 @@ export const VariantClient: React.FC<VariantClientProps> = ({ data }) => {
 		<>
 			<div className="flex items-center justify-between">
 				<Heading
-					title={`Jenis (${data.length})`}
-					description="Kelola Jenis di Toko Anda"
+					title={`Varian (${data.length})`}
+					description="Kelola Varian di Toko Anda"
 				/>
 				<Button
 					onClick={() =>
 						router.push(`/${params.storeId}/variants/new`)
 					}>
 					<Plus className="h-4 w-4" />
-					Tambah Jenis
+					Tambah Varian
 				</Button>
 			</div>
 			<Separator />
 			<DataTable searchKey="name" columns={columns} data={data} />
-			<Heading title="API" description="API untuk memanggil Jenis" />
+			<Heading title="API" description="API untuk memanggil Varian" />
 			<Separator />
 			<ApiList entityName="variants" entityIdName="variantId" />
 		</>

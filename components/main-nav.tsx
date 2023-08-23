@@ -34,7 +34,7 @@ export function MainNav({
 		},
 		{
 			href: `/${params.storeId}/variants`,
-			label: 'Jenis',
+			label: 'Varian',
 			active: pathname === `/${params.storeId}/variants`,
 		},
 		{

@@ -17,7 +17,7 @@ export const columns: ColumnDef<VariantColumn>[] = [
 	},
 	{
 		accessorKey: 'value',
-		header: 'Jenis',
+		header: 'Varian',
 		cell: ({ row }) => (
 			<div className="flex items-center gap-x-2">
 				{row.original.value}
