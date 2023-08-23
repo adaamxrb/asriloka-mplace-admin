@@ -9,8 +9,8 @@ import { ToastProvider } from '@/providers/toast-provider';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-	title: 'Admin Dashboard',
-	description: 'Admin Dashboard',
+	title: 'Asriloka - Admin Dashboard',
+	description: 'Ariloka Marketplace - Admin',
 };
 
 export default function RootLayout({
