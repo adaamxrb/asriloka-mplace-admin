@@ -128,11 +128,11 @@ export const VariantForm: React.FC<VariantFormProps> = ({ initialData }) => {
 							name="name"
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel>Nama</FormLabel>
+									<FormLabel>Nama Produk</FormLabel>
 									<FormControl>
 										<Input
 											disabled={loading}
-											placeholder="cth: Durian, Jeruk, Apel, ..."
+											placeholder="Durian"
 											{...field}
 										/>
 									</FormControl>
@@ -145,11 +145,11 @@ export const VariantForm: React.FC<VariantFormProps> = ({ initialData }) => {
 							name="value"
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel>Value</FormLabel>
+									<FormLabel>Varian Untuk Produk</FormLabel>
 									<FormControl>
 										<Input
 											disabled={loading}
-											placeholder="cth: durian, jeruk, apel"
+											placeholder="Durian Merah"
 											{...field}
 										/>
 									</FormControl>

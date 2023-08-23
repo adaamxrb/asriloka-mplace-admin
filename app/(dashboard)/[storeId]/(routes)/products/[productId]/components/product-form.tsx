@@ -307,7 +307,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({
 											<SelectTrigger>
 												<SelectValue
 													defaultValue={field.value}
-													placeholder="Pilih Jenis"
+													placeholder="Pilih Varian"
 												/>
 											</SelectTrigger>
 										</FormControl>
@@ -316,7 +316,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({
 												<SelectItem
 													key={variant.id}
 													value={variant.id}>
-													{variant.name}
+													{variant.value}
 												</SelectItem>
 											))}
 										</SelectContent>
