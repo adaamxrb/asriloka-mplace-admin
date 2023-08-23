@@ -17,6 +17,7 @@ model Store{
   sizes         Size[]        @relation("StoreToSize")
   variants      Variant[]     @relation("StoreToVariant")
   products      Product[]     @relation("StoreToProduct")
+  orders        Order[]       @relation("StoreToOrder")
   createdAt     DateTime      @default(now())
   updatedAt     DateTime      @updatedAt
 }
@@ -90,6 +91,7 @@ model Product{
   variantId      String
   variant        Variant       @relation(fields: [variantId], references: [id])
   images         Image[]
+  orderItems     OrderItem[]
   createdAt      DateTime      @default(now())
   updatedAt      DateTime      @updatedAt
 
@@ -110,3 +112,30 @@ model Image{
   @@index([productId])
 }
 
+model Order{
+  id String @id @default(uuid())
+  storeId String
+  store Store @relation("StoreToOrder", fields: [storeId], references: [id])
+  orderItems OrderItem[]
+  isPaid Boolean @default(false)
+  phone String @default("")
+  address String @default("")
+  createdAt DateTime @default(now())
+  updateAt  DateTime @updatedAt
+
+  @@index([storeId])
+}
+
+model OrderItem{
+  id String @id @default(uuid())
+  orderId String
+  order Order @relation(fields: [orderId], references: [id])
+  productId String
+  product Product @relation(fields: [productId], references: [id])
+  quantity Int
+  createdAt DateTime @default(now())
+  updateAt  DateTime @updatedAt
+
+  @@index([orderId])
+  @@index([productId])
+}
